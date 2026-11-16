@@ -43,7 +43,7 @@ export function Footer() {
               <li className="flex items-center gap-2"><MapPin className="h-4 w-4" />13231 72 Ave, Surrey BC</li>
             </ul>
             <div className="mt-5 flex gap-3">
-              {SOCIALS.map((s, i) => { const I = icons[i]; return <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="flex h-11 w-11 items-center justify-center rounded-full border hover:border-primary hover:text-accent2"><I className="h-4 w-4" /></a>; })}
+              {SOCIALS.map((s, i) => { const I = icons[i] ?? Facebook; return <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label} className="flex h-11 w-11 items-center justify-center rounded-full border hover:border-primary hover:text-accent2"><I className="h-4 w-4" /></a>; })}
             </div>
           </div>
         </div>

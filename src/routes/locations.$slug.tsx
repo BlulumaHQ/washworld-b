@@ -13,7 +13,7 @@ export const Route = createFileRoute("/locations/$slug")({
 
 function Detail() {
   const l = Route.useLoaderData();
-  const svc = [...l.tags.map((t) => tagService[t]), { icon: "/images/fragrance.jpg", title: "Fragrance Spray" }];
+  const svc = [...l.tags.flatMap((t) => (tagService[t] ? [tagService[t]] : [])), { icon: "/images/fragrance.jpg", title: "Fragrance Spray" }];
   const others = locations.filter((o) => o.slug !== l.slug);
   return (
     <>

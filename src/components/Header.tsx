@@ -39,7 +39,7 @@ export function Header() {
           <Logo />
           <nav className="hidden lg:flex items-center gap-8" aria-label="Main">
             {nav.map((n) => (
-              <Link key={n.label} to={n.to} hash={"hash" in n ? n.hash : undefined}
+              <Link key={n.label} to={n.to} {...("hash" in n ? { hash: n.hash } : {})}
                 className={`py-2 text-sm font-medium border-b-2 transition-colors ${active(n.to, "hash" in n ? n.hash : undefined) ? "text-white border-primary" : "text-nav border-transparent hover:text-white"}`}>
                 {n.label}
               </Link>
@@ -60,7 +60,7 @@ export function Header() {
           </div>
           <nav className="container-ww flex flex-col gap-2 pt-8 w-full" aria-label="Mobile">
             {nav.map((n) => (
-              <Link key={n.label} to={n.to} hash={"hash" in n ? n.hash : undefined} onClick={() => setOpen(false)} className="display text-3xl py-3 border-b">{n.label}</Link>
+              <Link key={n.label} to={n.to} {...("hash" in n ? { hash: n.hash } : {})} onClick={() => setOpen(false)} className="display text-3xl py-3 border-b">{n.label}</Link>
             ))}
             <a href={PHONE_HREF} className="mt-8 flex items-center gap-2 text-lg font-semibold"><Phone className="h-5 w-5" />{PHONE}</a>
             <Link to="/locations" className="btn btn-primary mt-6">Find a Location</Link>
