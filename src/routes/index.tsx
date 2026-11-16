@@ -33,12 +33,12 @@ function Home() {
   const plan = plans[tab];
   return (
     <>
-      <section className="relative min-h-[780px] overflow-hidden bg-hero flex flex-col">
+      <section className="relative min-h-[780px] md:min-h-[900px] overflow-hidden bg-hero flex flex-col">
         <img src="/images/hero-b.jpg" alt="Car under blue LED wash arches at night" className="absolute inset-0 h-full w-full object-cover object-[72%_50%] md:object-[68%_50%]" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(5,10,22,.85) 0%, rgba(5,10,22,0) 22%, rgba(5,10,22,0) 55%, #070C1A 100%)" }} />
         <div className="absolute inset-0 md:hidden" style={{ background: "linear-gradient(90deg, rgba(5,10,22,.85), rgba(5,10,22,.35))" }} />
         <div className="absolute inset-0 max-md:hidden" style={{ background: "linear-gradient(90deg, rgba(5,10,22,.7), transparent 60%)" }} />
-        <div className="container-ww relative flex-1 flex flex-col justify-end pt-40 pb-14 w-full">
+        <div className="container-ww relative flex-1 flex flex-col justify-end pt-36 md:pt-48 pb-14 w-full">
           <div className="max-w-[620px]">
             <span className="badge-hero"><span className="mint-dot" />Open now · 24 hours · 7 days</span>
             <h1 className="display mt-7" style={{ fontSize: "clamp(44px,6.4vw,88px)", lineHeight: .98 }}>Showroom shine.<br /><span className="text-accent2">Any hour.</span></h1>
