@@ -11,7 +11,7 @@ const noindex = `(function(){var h=location.hostname;if(/(lovable\\.app|lovablep
 function NotFoundComponent() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-hero flex items-center">
-      <img src="/images/hero-b.jpg" alt="" className="absolute inset-0 h-full w-full object-cover opacity-45" style={{ objectPosition: "70% 50%" }} />
+      <img src="/images/hero-b.webp" alt="" className="absolute inset-0 h-full w-full object-cover opacity-45" style={{ objectPosition: "70% 50%" }} />
       <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, rgba(5,10,22,.97) 0%, rgba(5,10,22,.8) 50%, rgba(5,10,22,.3) 100%)" }} />
       <div className="container-ww relative w-full pt-24">
         <div className="display" style={{ fontStretch: "125%", fontSize: "clamp(96px,14vw,200px)", color: "rgba(90,174,255,.9)", lineHeight: 1 }}>404</div>
@@ -53,6 +53,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Inter:wght@400;500;600;700&display=swap" },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "icon", href: "/favicon.ico", sizes: "any" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
     scripts: [{ children: noindex }],
   }),

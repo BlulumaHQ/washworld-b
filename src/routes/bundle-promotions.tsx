@@ -40,7 +40,7 @@ const benefits = [[BadgeDollarSign,"Better value","Save compared to buying singl
 function Bundles() {
   return (
     <>
-      <SubHero image="/images/hero-b.jpg" pos="70% 50%" eyebrow="Bundle Deals · Prepay 4 washes" l1="Wash more." l2="Pay less." text="Prepay for 4 washes and get better value, faster checkout and premium wash options at participating Washworld locations.">
+      <SubHero image="/images/hero-b.webp" pos="70% 50%" eyebrow="Bundle Deals · Prepay 4 washes" l1="Wash more." l2="Pay less." text="Prepay for 4 washes and get better value, faster checkout and premium wash options at participating Washworld locations.">
         <div className="mt-9 flex flex-wrap gap-3"><a href="#bundles" className="btn btn-primary">Shop Bundle Deals</a><a href="#types" className="btn btn-secondary">Compare Wash Types</a></div>
       </SubHero>
       <div className="container-ww relative z-10 -mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 pb-16">

@@ -15,15 +15,15 @@ const field = "mt-2 w-full rounded-2xl border border-white/10 bg-[#070C1A] px-4 
 function Contact() {
   const [state, setState] = useState<"idle" | "sending" | "ok" | "err">("idle");
   async function submit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault(); setState("sending");
+    e.preventDefault(); const form = e.currentTarget; setState("sending");
     try {
-      const r = await fetch(FORMSPREE_ENDPOINT, { method: "POST", body: new FormData(e.currentTarget), headers: { Accept: "application/json" } });
-      if (!r.ok) throw new Error(); setState("ok"); e.currentTarget?.reset();
+      const r = await fetch(FORMSPREE_ENDPOINT, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      if (!r.ok) throw new Error(); setState("ok"); form.reset();
     } catch { setState("err"); }
   }
   return (
     <>
-      <SubHero image="/images/maple-ridge.jpg" eyebrow="Contact" l1="We're here" l2="around the clock." text="Questions about a wash, a bundle or a location? Reach out and our team will get back to you." />
+      <SubHero image="/images/maple-ridge.webp" eyebrow="Contact" l1="We're here" l2="around the clock." text="Questions about a wash, a bundle or a location? Reach out and our team will get back to you." />
       <section className="pb-[120px] max-sm:pb-[72px]"><div className="container-ww grid gap-6 lg:grid-cols-[1fr_1.4fr]">
         <div className="space-y-4">
           {[[Phone,"Call",PHONE,PHONE_HREF],[Mail,"Email",EMAIL,`mailto:${EMAIL}`],[MapPin,"Head office","13231 72 Ave, Surrey BC",null]].map(([I,k,v,h]) => { const Ic = I as typeof Phone; const c = <><Ic className="h-5 w-5 text-accent2" /><div className="mt-4 text-xs uppercase tracking-[.16em] text-muted-foreground">{k as string}</div><div className="display mt-1 text-[28px] max-sm:text-2xl break-words">{v as string}</div></>;
@@ -36,6 +36,7 @@ function Contact() {
         <form onSubmit={submit} className="rounded-[28px] border bg-surface p-11 max-sm:p-6">
           <h2 className="display text-3xl">Send us a message</h2>
           <p className="mt-2 text-muted-foreground">We usually reply within one business day.</p>
+          <input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             <label className="text-sm font-semibold">Name<input required name="name" className={field} /></label>
             <label className="text-sm font-semibold">Email<input required type="email" name="email" className={field} /></label>

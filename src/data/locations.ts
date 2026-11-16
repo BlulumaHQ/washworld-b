@@ -1,11 +1,11 @@
 export type Location = { slug: string; name: string; short: string; image: string; address: string | null; tags: string[]; maps: string };
 const m = (q: string) => `https://maps.google.com/?q=${q}`;
 export const locations: Location[] = [
-  { slug: "newton-surrey", name: "Newton, Surrey", short: "Surrey (Newton)", image: "/images/surrey.jpg", address: "13231 72 Ave, Surrey BC", tags: ["Touchless", "Self-serve", "Vacuums"], maps: m("Washworld+Newton+Surrey+BC") },
-  { slug: "richmond", name: "Richmond", short: "Richmond", image: "/images/richmond.jpg", address: null, tags: ["Touchless", "Vacuums"], maps: m("Washworld+Richmond+BC") },
-  { slug: "abbotsford", name: "Abbotsford", short: "Abbotsford", image: "/images/abbotsford.jpg", address: null, tags: ["Touchless", "Vacuums"], maps: m("Washworld+Abbotsford+BC") },
-  { slug: "maple-ridge", name: "Maple Ridge", short: "Maple Ridge", image: "/images/maple-ridge.jpg", address: null, tags: ["Touchless", "Polisher", "Vacuums"], maps: m("Washworld+Maple+Ridge+BC") },
-  { slug: "chilliwack", name: "Chilliwack", short: "Chilliwack", image: "/images/chilliwack.jpg", address: "7854 Vedder Rd, Chilliwack BC", tags: ["Soft Cloth", "Detailing Products", "Vacuums"], maps: m("Washworld+Chilliwack+BC") },
+  { slug: "newton-surrey", name: "Newton, Surrey", short: "Surrey (Newton)", image: "/images/surrey.webp", address: "13231 72 Ave, Surrey BC", tags: ["Touchless", "Self-serve", "Vacuums"], maps: m("Washworld+Newton+Surrey+BC") },
+  { slug: "richmond", name: "Richmond", short: "Richmond", image: "/images/richmond.webp", address: null, tags: ["Touchless", "Vacuums"], maps: m("Washworld+Richmond+BC") },
+  { slug: "abbotsford", name: "Abbotsford", short: "Abbotsford", image: "/images/abbotsford.webp", address: null, tags: ["Touchless", "Vacuums"], maps: m("Washworld+Abbotsford+BC") },
+  { slug: "maple-ridge", name: "Maple Ridge", short: "Maple Ridge", image: "/images/maple-ridge.webp", address: null, tags: ["Touchless", "Polisher", "Vacuums"], maps: m("Washworld+Maple+Ridge+BC") },
+  { slug: "chilliwack", name: "Chilliwack", short: "Chilliwack", image: "/images/chilliwack.webp", address: "7854 Vedder Rd, Chilliwack BC", tags: ["Soft Cloth", "Detailing Products", "Vacuums"], maps: m("Washworld+Chilliwack+BC") },
 ];
 export const getLocation = (slug: string) => locations.find((l) => l.slug === slug);
 export const tagService: Record<string, { icon: string; title: string }> = {

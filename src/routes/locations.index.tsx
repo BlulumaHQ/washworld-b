@@ -12,7 +12,7 @@ export const Route = createFileRoute("/locations/")({
 function Locations() {
   return (
     <>
-      <SubHero image="/images/richmond.jpg" eyebrow="Locations · Open 24/7" l1="Five stops." l2="Always open." text="From Richmond to Chilliwack, there's a Washworld near you — open 24 hours a day, 7 days a week.">
+      <SubHero image="/images/richmond.webp" eyebrow="Locations · Open 24/7" l1="Five stops." l2="Always open." text="From Richmond to Chilliwack, there's a Washworld near you — open 24 hours a day, 7 days a week.">
         <div className="mt-9 flex flex-wrap gap-2">{locations.map((l) => <a key={l.slug} href={`#${l.slug}`} className="btn btn-sm btn-secondary">{l.name}</a>)}</div>
       </SubHero>
       <section className="pb-[120px] max-sm:pb-[72px]"><div className="container-ww space-y-6">
